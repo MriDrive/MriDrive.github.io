@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iDrive— Your Automatic ATO Logbook</title>
+    <meta name="description" content="Automatic trip tracking for work. Create ATO-compliant logbooks effortlessly. Just drive.">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Analytics - ADD HERE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOURID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YOURID');
+    </script>
+    
+    <!-- Performance optimization -->
+    <style>
+        /* Critical CSS for initial render */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 2rem 0;
+            background: transparent;
+        }
+        .brand-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            padding-left: 2rem;
+        }
+        .hero-section {
+            padding-top: 8rem;
+        }
+    </style>
+</head>
+<body>
+        <!-- Hidden copyright for extra protection -->
+    <div style="display: none;">
+        Copyright © 2024-2026 iDrive. All rights reserved.
+        This website and its content are protected by Australian copyright law.
+        Unauthorized use, reproduction, or distribution is prohibited.
+        Digital Millennium Copyright Act (DMCA) Notice: All content is protected.
+    </div>
+    <!-- ================================================= -->
+    <!-- HEADER - FLUENTLY STYLE (TRANSPARENT, DISAPPEARS) -->
+    <!-- ================================================= -->
+    <header class="site-header" id="main-header">
+        <div class="container">
+            <!-- White logo with subtle cyan glow -->
+            <h1 class="brand-title" id="idrive-logo">iDrive</h1>
+        </div>
+    </header>       
+
+    <!-- ================================================= -->
+    <!-- MAIN SCROLL CONTAINER -->
+    <!-- ================================================= -->
+    <main class="scroll-container">
+        
+        <!-- SECTION 1: HERO - FLUENTLY STYLE -->
+        <section class="section hero-section" id="hero">
+            <div class="container hero-grid">
+                <!-- Left Column: Text Content -->
+                <div class="hero-content">
+                    <!-- Main Headline with Gradient Text -->
+                    <h1 class="hero-headline"> iDrive<br>
+                        <span class="gradient-text">The Way I Drive</span> 
+                    </h1>
+                    
+                    <!-- Subheadline -->
+                    <p class="hero-subhead">
+                        iDrive automatically catches every trip, classifies it automatically, and generates ATO-ready reports—effortless, hands-free, smart.
+                    </p>
+                    
+                    <!-- CTA Button & Note -->
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-large" id="heroTrialBtn">
+                            <i class="fas fa-car"></i> iDrive Today
+                        </button>
+                        <p class="hero-note">
+                            <i class="fas fa-shield-alt"></i> Your travel data is always private & encrypted.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Hero Animation (Modern Flow + Trip Card) -->
+                <div class="hero-preview">
+                    <div class="hero-frame">
+                        <img src="assets/heroright.jpg" alt="iDrive App Screenshot" />
+                    </div>
+                 </div>  
+            <!-- Scroll Indicator -->
+            <div class="scroll-hint" data-target="features">
+                <span>See how it works</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+                        
+        <!-- SECTION 2: FEATURES -->
+        <section class="section section-features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Key Features</h2>
+                    <p class="section-subtitle">Everything you need to track your trips easily and accurately. Powerful features designed for accuracy and simplicity.</p>
+                </div>
+
+                <!-- Feature Cards Grid - No Marquee -->
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card" data-number="01">
+                        <div class="feature-card-border">
+                            <div class="feature-card-glass">
+                                <div class="feature-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <h3 class="feature-title">Automatic Trip Detection</h3>
+                                <p class="feature-desc">Detects when you start and stop driving automatically. Ensures no trips are missed. Manual stop option available if needed.</p>
+                                <div class="feature-hover-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card" data-number="02">
+                        <div class="feature-card-border">
+                            <div class="feature-card-glass">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3 class="feature-title">Never Miss a Trip</h3>
+                                <p class="feature-desc">Ensures every trip is tracked without gaps, giving you complete and accurate logs for your records.</p>
+                                <div class="feature-hover-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card" data-number="03">
+                        <div class="feature-card-border">
+                            <div class="feature-card-glass">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <h3 class="feature-title">Smart Classification</h3>
+                                <p class="feature-desc">Classify trips easily with swipe gestures or long press. Auto-calculates percentages for quick reporting.</p>
+                                <div class="feature-hover-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card" data-number="04">
+                        <div class="feature-card-border">
+                            <div class="feature-card-glass">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3 class="feature-title">Quick Reports</h3>
+                                <p class="feature-desc">Get fast summaries for this month, last month, or financial years. Shows kms, business vs personal %, and allowances.</p>
+                                <div class="feature-hover-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card" data-number="05">
+                        <div class="feature-card-border">
+                            <div class="feature-card-glass">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h3 class="feature-title">ATO-ready Reports</h3>
+                                <p class="feature-desc">Generates reports suitable for tax and audits. Auto-calculates business allowances and exports data in seconds.</p>
+                                <div class="feature-hover-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card" data-number="06">
+                        <div class="feature-card-border">
+                            <div class="feature-card-glass">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <h3 class="feature-title">Auto Cloud Backup</h3>
+                                <p class="feature-desc">All trips are stored securely in the cloud. Ensures your data is safe and accessible without manual backup.</p>
+                                <div class="feature-hover-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 7 -->
+                    <div class="feature-card" data-number="07">
+                        <div class="feature-card-border">
+                            <div class="feature-card-glass">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <h3 class="feature-title">Privacy-First Design</h3>
+                                <p class="feature-desc">Only your email is required. Data stays private, compliant, and secure with end-to-end encryption.</p>
+                                <div class="feature-hover-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- SECTION: FAQ -->
+        <section class="section section-faq" id="faq">
+            <div class="container faq-container">
+                <div class="faq-header">
+                    <h2 class="faq-title">
+                        <span class="faq-title-line">Frequently Asked</span>
+                        <span class="faq-title-accent">Questions</span>
+                    </h2>
+                    <p class="faq-description">Quick answers about iDrive's advanced tracking technology</p>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Does iDrive track trips automatically?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. iDrive automatically detects when you start and stop driving, so every trip is recorded without manual input. After finishing a trip, simply walking will automatically stop tracking. You can also manually stop a trip anytime by holding the stop button while tracking is in process.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I start my first trip tracking?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Simply open iDrive and start driving. Tracking begins automatically, usually within seconds.</p>
+                            <p>You can put the app in the background or lock your phone. For best results when running in the background, start driving within 2 minutes to make sure GPS working for auto tracking.</p>
+                            <p>To confirm tracking is active:</p>
+                            <ul>
+                                <li>In the app: Look for <strong>"Auto tracking in process…"</strong></li>
+                                <li>In the background: Look for a <strong>blue arrow</strong> in your iPhone's status bar</li>
+                            </ul>
+                            <p><strong>To stop tracking:</strong> Stop driving and exit your vehicle, or manually hold the stop button in the app.</p>
+                        </div>
+                    </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Why is auto tracking sometimes delayed or fails to start?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Auto tracking relies on GPS signals to detect when you begin driving. If the GPS signal is too weak or unavailable, tracking may be delayed or fail to start automatically.</p>
+                                
+                                <p><strong>Common causes include:</strong></p>
+                                <ul>
+                                    <li>Starting in areas with poor GPS reception (underground parking, tunnels, dense urban areas)</li>
+                                    <li>Having the app in the background for over 2 minutes before driving without sufficient GPS signal</li>
+                                    <li>GPS permissions being restricted or disabled</li>
+                                    <li>Device location services experiencing temporary issues</li>
+                                </ul>
+                                
+                                <p><strong>What to do if tracking fails:</strong></p>
+                                <ul>
+                                    <li>You can <strong>add a missing trip manually</strong> in the app for accurate reporting</li>
+                                    <li>For best results, ensure iDrive has location permissions set to "Always"</li>
+                                    <li>Try opening the app briefly before driving in areas with historically poor GPS reception</li>
+                                </ul>
+                                
+                                <p>Delayed tracking typically resolves once a stable GPS signal is acquired, usually within a minute of starting your trip.</p>
+                            </div>
+                        </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why sometimes my trip doesn't stop automatically, and manual stop doesn't work?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>iDrive relies on GPS to detect when a trip ends. If the signal is weak or lost (for example, in parking garages, tunnels, or areas with poor reception), automatic stopping may fail. In these cases, manually stopping the trip may also not register immediately because the app cannot confirm your ending location. You can try stopping or correcting the trip later when the GPS signal is stronger.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What if a trip is missed?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can manually add a missed trip at any time. iDrive ensures your records remain complete and accurate.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why are some addresses approximate and search history not saved?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>For privacy reasons, iDrive does not store any address search history. When a trip starts or ends, the app automatically detects your location and assigns the nearest address. This may sometimes differ slightly from the exact house number (for example, 28 instead of 30). iDrive prioritizes your privacy while still accurately tracking distances for allowances and compliance purposes.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I classify business vs personal trips?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Trips can be classified with simple swipe gestures or a long press. You can also set trips as “Always Business” or “Always Personal” for recurring trips. Smart rules allow trips during workdays to default to business and weekends to personal.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Does iDrive generate ATO-ready reports?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. iDrive generates ATO-compliant reports that include trip type, business and travel kilometres, and reimbursement amounts calculated according to ATO allowance rules. Reports are available in both PDF and CSV formats, giving you the flexibility to use or share them as needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I get quick summaries for a specific period?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>iDrive provides quick reports for this month, last month, this financial year, and last financial year.Detailed reports also allow you to select the specific period and customize the report according to your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How does iDrive's cloud backup work?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>iDrive automatically backs up your trip data to the cloud to ensure it is never lost. The first backup occurs the first time you open the app, and subsequent backups happen automatically whenever you add, delete, or track a trip since the last backup. You don’t need to manually check or manage your cloud data — it is stored securely so that if your device is lost or reset, you can log in and restore all your trips seamlessly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What personal information does iDrive collect?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>iDrive only requires your email address. No unnecessary personal data is collected.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PRICING -->
+        <section class="section section-pricing" id="pricing">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="pricing-header">
+                    <h2 class="section-title">Track. Report. Relax.</h2>
+                    <p class="section-subtitle">Lite starts free, Pro handles everything else.</p>
+                </div>
+
+                <!-- Three Column Pricing Grid -->
+                <div class="pricing-grid">
+                    <!-- Column 1: Lite Plan (Free) -->
+                    <div class="pricing-card lite-plan">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Lite</h3>
+                            <div class="plan-price">
+                                <span class="price">$0</span>
+                                <span class="period">forever</span>
+                            </div>
+                            <p class="plan-tagline">Automatic Tracking Essentials</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Automatic trip detection</li>
+                                <li><i class="fas fa-check"></i> Business vs personal classification</li>
+                                <li><i class="fas fa-check"></i> Quick period summaries</li>
+                                <li><i class="fas fa-check"></i> CSV/Excel/PDF reports</li>
+                                <li><i class="fas fa-times"></i> <span class="feature-disabled">Manual trip entry</span></li>
+                                <li><i class="fas fa-times"></i> <span class="feature-disabled">ATO compliance reports</span></li>
+                                <li><i class="fas fa-times"></i> <span class="feature-disabled">Auto cloud backup</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Pro Yearly Plan (FEATURED - Center Column) -->
+                    <div class="pricing-card pro-plan featured">
+                        <!-- "Best Value" Badge -->
+                        <div class="value-badge">BEST VALUE</div>
+
+                        <div class="plan-header">
+                            <h3 class="plan-name">Pro</h3>
+                            <div class="plan-price">
+                                <span class="price">$99.99</span>
+                                <span class="period">per year</span>
+                            </div>
+                            <p class="plan-tagline">Complete ATO Solution</p>
+                            
+                            <!-- Savings Highlight -->
+                            <div class="savings-highlight">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Save over 30% vs monthly</span>
+                            </div>
+                        </div>
+
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> <strong>Everything in Lite, plus:</strong></li>
+                                <li><i class="fas fa-check"></i> Manual trip entry</li>
+                                <li><i class="fas fa-check"></i> ATO compliance reports</li>
+                                <li><i class="fas fa-check"></i> Auto cloud backup</li>
+                                <li><i class="fas fa-check"></i> Priority email support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Pro Monthly Plan -->
+                    <div class="pricing-card pro-plan monthly">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Pro</h3>
+                            <div class="plan-price">
+                                <span class="price">$9.99</span>
+                                <span class="period">per month</span>
+                            </div>
+                            <p class="plan-tagline">Flexible Monthly Access</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> <strong>Same features as Yearly</strong></li>
+                                <li><i class="fas fa-check"></i> Manual trip entry</li>
+                                <li><i class="fas fa-check"></i> ATO compliance reports</li>
+                                <li><i class="fas fa-check"></i> Auto cloud backup</li>
+                                <li><i class="fas fa-check"></i> Priority email support</li>
+                                
+                                <!-- Flexibility Note -->
+                                <li class="flexibility-note">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <span>Cancel anytime</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Note -->
+                <div class="pricing-footer">
+                    <p class="footer-note">
+                        <i class="fas fa-info-circle"></i>
+                        Upgrade or downgrade anytime. All features require iOS app.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION : iOS DOWNLOAD CTA (Before Footer) -->
+        <section class="section ios-download-section" id="download">
+            <div class="container">
+                <div class="ios-content">
+                    <!-- Section Header -->
+                    <h2 class="ios-title">Start Your Free Trial on iPhone</h2>
+                    <p class="ios-subtitle">Download iDrive to automate your ATO logbook in minutes</p>
+                    
+                    <!-- Download Options - Three Scenarios -->
+                    <div class="download-scenarios">
+                        
+                        <!-- Scenario 1: iOS Device (Hidden by default) -->
+                        <div class="download-scenario ios-device" id="ios-scenario">
+                            <div class="scenario-content">
+                                <h3 class="scenario-title">Download Directly to Your iPhone</h3>
+                                <p class="scenario-description">Tap below to install iDrive from the App Store.</p>
+                                
+                                <div class="primary-cta">
+                                        <a
+                                            href="https://apps.apple.com/app/id6751429770"
+                                            target="_blank"
+                                            rel="noopener"
+                                            class="app-store-btn"
+                                             >
+                                            <img
+                                                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                                                alt="Download on the App Store"
+                                                width="200"
+                                                height="60"
+                                                loading="lazy"
+                                            >
+                                        </a>
+                                 </div>
+
+
+                                <div class="scenario-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Direct install</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>1 month free trial</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>No credit card</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Scenario 2: macOS Device (Hidden by default) -->
+                        <div class="download-scenario macos-device" id="macos-scenario">
+                            <div class="scenario-content">
+                                <h3 class="scenario-title">Using a Mac? Get iDrive on Your iPhone</h3>
+                                <p class="scenario-description">iDrive is an iOS app. Here's how to install it on your iPhone:</p>
+                                
+                                <div class="scenario-instructions">
+                                    <div class="instruction-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Scan with iPhone Camera</h4>
+                                            <p>Use your iPhone's camera to scan this QR code</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="qr-section">
+                                        <div class="qr-container">
+                                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://apps.apple.com/app/id6751429770&margin=10" 
+                                                alt="Scan to download iDrive from App Store"
+                                                width="200" 
+                                                height="200">
+                                            <div class="scan-hint">
+                                                <i class="fas fa-camera"></i>
+                                                <span>Scan with iPhone camera</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="instruction-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Or Open on Paired iPhone</h4>
+                                            <p>Click the link below - it may open on your paired iPhone via Handoff</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="secondary-cta">
+                                    <a href="https://apps.apple.com/6751429770" class="app-store-link" target="_blank" rel="noopener">
+                                        <i class="fab fa-apple"></i>
+                                        <span>Open App Store on iPhone</span>
+                                    </a>
+                                    <p class="link-note">Requires iPhone with same Apple ID</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Scenario 3: Desktop/Other (Visible by default) -->
+                        <div class="download-scenario desktop-device" id="desktop-scenario">
+                            <div class="scenario-content">
+                                <h3 class="scenario-title">Get iDrive on Your iPhone</h3>
+                                <p class="scenario-description">Scan this QR code with your iPhone camera to download</p>
+                                
+                                <div class="primary-cta">
+                                    <div class="qr-container">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://apps.apple.com/app/id6751429770&margin=10" 
+                                            alt="Scan to download iDrive from App Store"
+                                            width="200" 
+                                            height="200">
+                                        <div class="scan-hint">
+                                            <i class="fas fa-camera"></i>
+                                            <span>Scan with iPhone camera</span>
+                                        </div>
+                                    </div>
+                                 </div>
+                                
+                                <div class="secondary-cta">
+                                    <a href="https://apps.apple.com/6751429770" class="app-store-link" target="_blank" rel="noopener">
+                                        <i class="fab fa-apple"></i>
+                                        <span>Or open App Store directly</span>
+                                    </a>
+                                </div>
+                                
+                                <div class="scenario-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>14-day free trial</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>No credit card required</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <span>Cancel anytime</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div> <!-- End .download-scenarios -->
+                    
+                    <!-- Device Detection Note -->
+                    <p class="detection-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span id="device-info">Detecting your device...</span>
+                    </p>
+                    
+                </div> <!-- End .ios-content -->
+            </div> <!-- End .container -->
+        </section>
+        
+       <!-- SECTION: FOOTER -->
+        <footer class="site-footer">
+            <div class="container">
+                <!-- Platform Note -->
+                <div class="platform-note">
+                    <p>
+                        <i class="fab fa-apple"></i> Available on iOS • 
+                        <span class="android-coming">Android coming soon</span>
+                    </p>
+                </div>
+                
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <h3 class="footer-logo">iDrive</h3>
+                        <p class="footer-tagline">Automatic ATO Logbook</p>
+                        <p class="footer-description">Making work driving simpler and more deductible since 2024.</p>
+                    </div>
+                    
+                   <div class="footer-links">
+                    <!-- First Column: Product - Stays where it is, unchanged -->
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#features">How it works</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#download">Download iOS App</a>
+                    </div>
+                    
+                    <!-- Second Column: Company - Unchanged -->
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="/about.html">About</a>
+                        <a href="/contact.html">Contact</a>
+                    </div>
+
+                    <!-- Third Column: Resources - UPDATED to link to Blog Categories -->
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <!-- These links should go to category pages on your blog -->
+                        <a href="/ato.html">ATO Rules & Compliance</a>
+                        <a href="/tips.html">Tips & Best Practices</a>
+                    </div>
+
+                    <!-- Fourth Column: Legal - UPDATED (removed ATO Compliance page) -->
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="/privacy.html">Privacy Policy</a>
+                        <a href="/terms.html">Terms of Service</a>
+                        <a href="/cookie.html">Cookie Policy</a>
+                    </div>
+                </div>
+                </div>
+                     <!-- COPYRIGHT NOTICE - Add here -->
+                <div class="footer-copyright">
+                    <p>&copy; 2024-2026 iDrive. All rights reserved.</p>
+                    <p class="copyright-notice">
+                        Unauthorized copying, reproduction, or distribution of any content from this website is strictly prohibited. 
+                        All text, images, and designs are protected by copyright law.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

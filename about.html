@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iDrive— Your Automatic ATO Logbook</title>
+    <meta name="description" content="Automatic trip tracking for work. Create ATO-compliant logbooks effortlessly. Just drive.">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Performance optimization -->
+    <style>
+        /* Critical CSS for initial render */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 2rem 0;
+            background: transparent;
+        }
+        .brand-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            padding-left: 2rem;
+        }
+        .hero-section {
+            padding-top: 8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- ================================================= -->
+    <!-- BACK BUTTON - MUST BE AT ROOT LEVEL -->
+    <!-- ================================================= -->
+    <a href="/" class="nav-back" id="backHome">
+        <span class="back-icon"><i class="fas fa-arrow-left"></i></span>
+        <span class="back-text">Back to Home</span>
+    </a>
+    
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+    <header class="site-header" id="main-header">
+        <div class="container">
+            <h1 class="brand-title" id="idrive-logo">iDrive</h1>
+        </div>
+    </header>   
+    
+    <!-- ================================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================= -->
+    <main class="about-page">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="about-hero">
+                <h1>Driving Simplicity Since 2024</h1>
+                    <p class="subtitle">iDrive makes ATO-compliant logbooks effortless</p>
+                </section>
+
+                <!-- Mission Section -->
+                <section class="about-mission">
+                    <h2>Our Mission</h2>
+                    <p>To simplify work-related driving documentation through smart, automatic tracking that saves time and maximizes tax deductions. We believe tracking business trips shouldn't be a chore—it should happen automatically while you focus on the road.</p>
+                </section>
+
+                <!-- Story Section -->
+                <section class="about-story">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2024, iDrive Today was born from personal frustration. Like many Australians, we struggled with manual logbooks—forgetting trips, misplacing receipts, and dreading tax time. We knew there had to be a better way.</p>
+                    <p>Our team combined expertise in mobility technology, tax compliance, and user experience to create an app that <strong>automatically detects trips</strong>, <strong>classifies them intelligently</strong>, and <strong>generates ATO-ready reports</strong> with a single tap. No more manual entries, no more guesswork.</p>
+                    <p>Today, thousands of users trust iDrive to accurately track their work driving, saving hours each month and maximizing their legitimate tax deductions.</p>
+                </section>
+
+                <!-- What Makes iDrive Different -->
+                <section class="about-different">
+                    <h2>What Makes iDrive Different</h2>
+                    <div class="different-grid">
+                        <div class="different-card">
+                            <h3>🔄 Fully Automatic</h3>
+                            <p>Unlike manual logbooks or reminder-based apps, iDrive works silently in the background. It detects when you start and stop driving, ensuring <strong>no trip is ever missed</strong>—even those quick errands you'd normally forget to log.</p>
+                        </div>
+                        <div class="different-card">
+                            <h3>📊 ATO-Ready From Day One</h3>
+                            <p>Built specifically for Australian tax requirements. Every report includes proper substantiation details the ATO requires: dates, distances, purposes, and business percentages calculated automatically.</p>
+                        </div>
+                        <div class="different-card">
+                            <h3>🔒 Privacy by Design</h3>
+                            <p>We collect only what's necessary—your email and trip data. Your location history stays on your device until you choose to back it up. End-to-end encryption ensures your travel patterns remain private.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team/Values Section -->
+                <section class="about-values">
+                    <h2>Our Values</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <h3>Privacy First</h3>
+                            <p>Your travel data is encrypted and never shared without consent. We believe your driving patterns are personal—they should stay that way.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3>ATO Compliance</h3>
+                            <p>Built to meet all ATO substantiation requirements for car expenses. We stay updated with tax office guidelines so you don't have to.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3>Simplicity</h3>
+                            <p>Automatic tracking means no manual entry, ever. We remove complexity so you can focus on your work, not paperwork.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Global Download CTA -->
+                <section class="download-cta">
+                    <h2>Ready to Simplify Your Driving Logs?</h2>
+                    <p>Join thousands of Australians who trust iDrive for accurate, automatic trip tracking.</p>
+                    <a href="../index.html#download" class="btn btn-primary" id="downloadBtn">
+                        <i class="fas fa-car"></i> Download iDrive Today
+                    </a>
+                </section>
+            </div>
+        </main>
+
+            <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact iDrive Today | Support & Feedback</title>
+    <meta name="description" content="Get help with iDrive Today. Contact our support team for technical issues, feedback, or business inquiries.">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Contact page specific styles -->
+    <style>
+        /* Will be moved to main CSS later */
+        .contact-page {
+            padding: 4rem 0;
+            background: var(--color-darker);
+        }
+    </style>
+</head>
+<body class="contact-page">
+    <!-- Back Button -->
+    <a href="/" class="nav-back" id="backHome">
+        <span class="back-icon"><i class="fas fa-arrow-left"></i></span>
+        <span class="back-text">Back to Home</span>
+    </a>
+    
+    <!-- Header -->
+    <header class="site-header" id="main-header">
+        <div class="container">
+            <h1 class="brand-title" id="idrive-logo">iDrive</h1>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="contact-page-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="contact-hero">
+                <h1>How Can We Help You?</h1>
+                <p class="subtitle">Get support, share feedback, or ask questions about iDrive Today</p>
+            </section>
+            
+            <!-- Contact Grid -->
+            <div class="contact-grid">
+                <!-- Left: Contact Form -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <!-- Category Selection -->
+                        <div class="form-group">
+                            <label for="category" class="form-label">
+                                <i class="fas fa-tag"></i> What can we help you with?
+                            </label>
+                            <select id="category" name="category" class="form-select" required>
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="tech">Technical Support</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <!-- User Info (Always visible) -->
+                        <div class="form-group">
+                            <label for="name" class="form-label">
+                                <i class="fas fa-user"></i> Your Name
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" 
+                                   placeholder="Optional - leave blank for anonymous">
+                        </div>
+                        
+                        <!-- Email (Conditional based on category) -->
+                        <div class="form-group" id="emailGroup">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i> Email Address
+                                <span class="form-note">(Required for Technical Support)</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" 
+                                   placeholder="your@email.com">
+                            <div class="form-hint" id="emailHint">
+                                We'll use this to respond to your inquiry
+                            </div>
+                        </div>
+                        
+                        <!-- Tech Support Specific (Hidden by default) -->
+                        <div class="form-group tech-specific" id="techFields" style="display: none;">
+                            <label for="userEmail" class="form-label">
+                                <i class="fas fa-key"></i> iDrive Account Email
+                                <span class="form-required">*</span>
+                            </label>
+                            <input type="email" id="userEmail" name="userEmail" class="form-input" 
+                                   placeholder="The email you use to log into iDrive">
+                            <div class="form-hint">
+                                Required for technical support to access your account details
+                            </div>
+                        </div>
+                        
+                        <!-- Subject -->
+                        <div class="form-group">
+                            <label for="subject" class="form-label">
+                                <i class="fas fa-heading"></i> Subject
+                                <span class="form-required">*</span>
+                            </label>
+                            <input type="text" id="subject" name="subject" class="form-input" 
+                                   placeholder="Brief summary of your inquiry" required>
+                        </div>
+                        
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label for="message" class="form-label">
+                                <i class="fas fa-comment"></i> Message
+                                <span class="form-required">*</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" 
+                                      rows="6" placeholder="Please provide as much detail as possible..." 
+                                      required></textarea>
+                        </div>
+
+                        <!-- Optional File Upload -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-image"></i> Attach Screenshots (Optional)
+                            </label>
+                            
+                            <div class="file-upload-container">
+                                <div class="file-input-wrapper">
+                                    <input type="file" 
+                                        id="attachments" 
+                                        name="attachments" 
+                                        class="file-input"
+                                        accept=".jpg,.jpeg,.png,.gif,.bmp,.webp"
+                                        multiple
+                                        onchange="updateFileList()">
+                                    
+                                    <label for="attachments" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span class="upload-text">Choose files or drag & drop here</span>
+                                        <span class="upload-hint">JPG, PNG, GIF, BMP, WebP (Max 5MB each)</span>
+                                    </label>
+                                </div>
+                                
+                                <!-- Selected files list -->
+                                <div id="fileList" class="file-list"></div>
+                                
+                                <!-- Upload hint -->
+                                <div class="form-hint">
+                                    <i class="fas fa-info-circle"></i> 
+                                    Helpful for technical issues: error screenshots, app screens, relevant photos.
+                                    Maximum 3 files, 5MB each. We'll respond via email for larger files.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form Status Messages -->
+                        <div id="formStatus" class="form-status" style="display: none;"></div>
+                                                
+                        <!-- Anti-spam Honeypot -->
+                        <div class="form-group honeypot" style="display: none;">
+                            <label for="website">Do not fill this out</label>
+                            <input type="text" id="website" name="website">
+                        </div>
+                        
+                        <!-- Timestamp (for rate limiting) -->
+                        <input type="hidden" id="formTimestamp" name="timestamp">
+                        
+                        <!-- Submit Button -->
+                        <div class="form-group submit-container">
+                            <div class="button-wrapper">
+                                <button type="submit" class="btn btn-primary btn-large">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                                <div class="form-note">
+                                    <i class="fas fa-shield-alt"></i> Your information is secure and private
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Right: Contact Info & Help -->
+                <div class="contact-info">
+                    <!-- Response Time -->
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Response Time</h3>
+                        <p>We typically respond within <strong>24-48 hours</strong> for technical support and <strong>2-3 business days</strong> for general inquiries.</p>
+                    </div>
+                    
+                    <!-- What to Include -->
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>For Faster Help</h3>
+                        <ul class="info-list">
+                            <li>Include your iDrive account email for tech support</li>
+                            <li>Describe steps to reproduce technical issues</li>
+                            <li>Add screenshots if relevant (you can reply to our email with them)</li>
+                            <li>Check our <a href="/index.html#faq">FAQ</a> for common solutions</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Privacy Note -->
+                    <div class="info-card privacy-note">
+                        <div class="info-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Your Privacy</h3>
+                        <p>We never share your information with third parties. Your inquiry is handled with strict confidentiality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Link -->
+            <div class="faq-link">
+                <p>Have a common question? Check our <a href="/index.html#faq">Frequently Asked Questions</a> first.</p>
+            </div>
+        </div>
+    </main>
+        <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
